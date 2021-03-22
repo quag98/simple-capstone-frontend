@@ -11,6 +11,15 @@
     <h1>Hello from HTML!</h1>
     <div id="app">
       {{ message }}
+      Name:
+      <input type="text" v-model="name" />
+      Price:
+      <input type="text" v-model="price" />
+      Description:
+      <input type="text" v-model="description" />
+      imageUrl:
+      <input type="text" v-model="imageUrl" />
+      <button v-on:click="createProduct()">Create a Product</button>
       <div v-for="product in products">
         <p>{{ product }}</p>
       </div>
