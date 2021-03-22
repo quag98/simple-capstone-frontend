@@ -7,6 +7,15 @@ var app = new Vue({
   data: function () {
     return {
       message: "Hello from JavaScript!",
+      products: [],
     };
   },
+  created() {
+    axios
+      .get("http://localhost:3000/api/products")
+      .then(response => {
+        console.log(response.data);
+        this.products = response.data;
+      });
+  }
 });
